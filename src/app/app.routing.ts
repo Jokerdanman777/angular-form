@@ -1,11 +1,9 @@
-// import { SignUpComponent } from './sign-up/sign-up.component';
-// import { LogInComponent } from './log-in/log-in.component';
 import { Route } from '@angular/router';
 
 export const routes: Route[] = [
     {
       path: '',
-      redirectTo: 'signup',
+      redirectTo: 'login',
       pathMatch: 'full'
     },
     {
@@ -15,5 +13,9 @@ export const routes: Route[] = [
     {
       path: 'signup',
       loadChildren: './sign-up/sign-up.module#SignUpModule'
+    },
+    {
+      path: '**',
+      redirectTo: 'signup'
     }
 ];
