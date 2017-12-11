@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './sign-up.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TextOnlyDirective } from './text-only.directive';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       },
     ])
   ],
-  declarations: [SignUpComponent]
+  declarations: [SignUpComponent, TextOnlyDirective]
 })
 export class SignUpModule { }
