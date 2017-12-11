@@ -2,25 +2,19 @@
         <div id="login">   
             <h1>Welcome Back!</h1>
   
-            <form #f="ngForm" (ngSubmit)="submit(f.value)">
+            <form #f="ngForm" (ngSubmit)="show(f.value)">
                 
                 <div class="field-wrap">
-                    <label>
-                    Email Address<span class="req">*</span>
-                    </label>
-                    <input type="email" ngModel name="mail" required minlength="4"/>
+                    <input type="email" placeholder = "Email Address" ngModel name="mail" required minlength="4"/>
                 </div>
                 
                 <div class="field-wrap">
-                    <label>
-                    Password<span class="req">*</span>
-                    </label>
-                    <input type="password" ngModel name="password" required minlength="4"  maxlength="8"/>
+                    <input type="password" placeholder = "Password" ngModel name="password" required minlength="4"  maxlength="8"/>
                 </div>
                 
                 <p class="forgot"><a href="#">Forgot Password?</a></p>
                 
-                <button class="button button-block" [disabled]="f.invalid" (click)="show(f.value)">Log In</button>
+                <button class="button button-block" [ngClass]="{'disabled' : f.invalid}" [disabled]="f.invalid">Log In</button>
                 
             </form>
 

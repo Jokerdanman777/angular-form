@@ -2,39 +2,32 @@
         <div id="signup">   
         <h1>Sign Up for Free</h1>
         
-            <form #f="ngForm">
+            <form [formGroup]="formModel" (ngSubmit)="show(formModel.value)">
             
                 <div class="top-row">
                     <div class="field-wrap">
-                    <label>
-                        First Name<span class="req">*</span>
-                    </label>
-                    <input type="text" required />
+                        <input type="text" placeholder = "First Name" formControlName = "firstName" />
                     </div>
 
                     <div class="field-wrap">
-                    <label>
-                        Last Name<span class="req">*</span>
-                    </label>
-                    <input type="text"required/>
+                        <input type="text" placeholder = "Last Name" formControlName = "lastName"/>
                     </div>
                 </div>
 
                 <div class="field-wrap">
-                    <label>
-                    Email Address<span class="req">*</span>
-                    </label>
-                    <input type="email"required/>
+                    <input type="email" placeholder = "Email Address" formControlName = "email"/>
                 </div>
-            
+            <div formGroupName = "passwordGroup">
                 <div class="field-wrap">
-                    <label>
-                    Set A Password<span class="req">*</span>
-                    </label>
-                    <input type="password"required/>
+                    <input type="password" placeholder = "Set A Password" formControlName = "password"/>
                 </div>
-            
-            <button type="submit" class="button button-block">Get Started</button>
+                <div class="field-wrap">
+                    <input type="password" placeholder = "Confirm Password" formControlName = "cpassword"/>
+                </div>
+            </div>
+
+            <button type="submit" class="button button-block" [ngClass]="{'disabled' : formModel.invalid}"
+              [disabled]="formModel.invalid">Get Started</button>
             
             </form>
 
