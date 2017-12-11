@@ -12,4 +12,7 @@ export class LogInComponent implements OnInit {
   public ngOnInit(): void {
   }
 
+  public show(value: any): void {
+    console.log(value);
+  }
 }

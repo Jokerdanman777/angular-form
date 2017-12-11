@@ -1,30 +1,22 @@
-<div class="form">
-    
-    <ul class="tab-group">
-      <li class="tab active"><a [routerLink]="['signup']">Sign Up</a></li>
-      <li class="tab"><a [routerLink]="['login']">Log In</a></li>
-    </ul>
-    
-    <div class="tab-content">
-            
+           
         <div id="signup">   
         <h1>Sign Up for Free</h1>
         
-            <form action="/" method="post">
+            <form #f="ngForm">
             
                 <div class="top-row">
                     <div class="field-wrap">
                     <label>
                         First Name<span class="req">*</span>
                     </label>
-                    <input type="text" required autocomplete="off" />
+                    <input type="text" required />
                     </div>
 
                     <div class="field-wrap">
                     <label>
                         Last Name<span class="req">*</span>
                     </label>
-                    <input type="text"required autocomplete="off"/>
+                    <input type="text"required/>
                     </div>
                 </div>
 
@@ -32,14 +24,14 @@
                     <label>
                     Email Address<span class="req">*</span>
                     </label>
-                    <input type="email"required autocomplete="off"/>
+                    <input type="email"required/>
                 </div>
             
                 <div class="field-wrap">
                     <label>
                     Set A Password<span class="req">*</span>
                     </label>
-                    <input type="password"required autocomplete="off"/>
+                    <input type="password"required/>
                 </div>
             
             <button type="submit" class="button button-block">Get Started</button>
@@ -47,7 +39,3 @@
             </form>
 
         </div>
-
-    </div>
-
-</div>
