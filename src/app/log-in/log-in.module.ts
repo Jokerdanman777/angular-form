@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LogInComponent } from './log-in.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AsyncEmailValidatorDirective } from './async-email-validator.directive';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +15,6 @@ import { FormsModule } from '@angular/forms';
       },
     ])
   ],
-  declarations: [LogInComponent]
+  declarations: [LogInComponent, AsyncEmailValidatorDirective]
 })
 export class LogInModule { }
