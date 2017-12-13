@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'form-log-in',
@@ -7,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
-  public constructor() { }
+  public constructor(
+    private _router: Router
+  ) { }
 
   public ngOnInit(): void {
   }
 
-  public show(value: any): void {
-    console.log(value);
+  public login(form: FormGroup): void {
+    this._router.navigate(['/success']);
   }
 }

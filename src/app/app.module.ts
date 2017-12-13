@@ -4,10 +4,12 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { routes } from './app.routing';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,
