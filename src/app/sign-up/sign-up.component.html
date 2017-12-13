@@ -6,11 +6,13 @@
             
                 <div class="top-row">
                     <div class="field-wrap">
-                        <input type="text" placeholder = "First Name" formControlName = "firstName" formTextOnly/>
+                        <input type="text" placeholder = "First Name" formControlName = "firstName" />
+                        <i class="showError" *ngIf = "formModel.controls['firstName'].errors?.textOnly">{{ formModel.controls['firstName'].errors?.textOnly }}</i>
                     </div>
 
                     <div class="field-wrap">
-                        <input type="text" placeholder = "Last Name" formControlName = "lastName" formTextOnly/>
+                        <input type="text" placeholder = "Last Name" formControlName = "lastName" />
+                        <i class="showError" *ngIf = "formModel.controls['lastName'].errors?.textOnly">{{ formModel.controls['lastName'].errors?.textOnly }}</i>
                     </div>
                 </div>
 

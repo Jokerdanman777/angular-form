@@ -18,13 +18,13 @@ export class AsyncEmailValidatorDirective {
 
 }
 
-export function asyncEmailValidator(control: FormGroup): Observable<{ [key: string]: boolean } | null> {
+export function asyncEmailValidator(control: FormGroup): Observable<{ [key: string]: string } | null> {
   const value: string = control.value || '';
   const valid: boolean = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
  return Observable.of(
     valid
     ? null
-    : {nospecial: true}
+    : {emailError: 'Некорректный email'}
  )
     .delay(3000);
 }

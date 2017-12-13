@@ -181,4 +181,10 @@
     margin-top: -20px;
     text-align: right;
   }
+
+  .showError {
+    display: block;
+    background: #f05c5c;
+    width: 100%
+}
   

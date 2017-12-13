@@ -5,16 +5,18 @@
             <form #f="ngForm" (ngSubmit)="show(f.value)">
                 
                 <div class="field-wrap">
-                    <input type="email" placeholder = "Email Address" ngModel name="mail" required minlength="4" formAsyncEmailValidator/>
+                    <input type="email" placeholder = "Email Address" ngModel #mail="ngModel" name="mail" required minlength="4" formAsyncEmailValidator/>
+                <i class="showError" *ngIf = "mail.errors">{{ mail.errors?.emailError }}</i>
                 </div>
                 
                 <div class="field-wrap">
-                    <input type="password" placeholder = "Password" ngModel name="password" required minlength="4"  maxlength="8"/>
+                    <input type="password" placeholder = "Password" ngModel #password="ngModel" name="password" required minlength="4"  maxlength="8"/>
+                    <i class="showError" *ngIf = "password.errors?.minlength">Пароль не может быть короче 4 символов</i>
                 </div>
-                
+
                 <p class="forgot"><a href="#">Forgot Password?</a></p>
                 
-                <button class="button button-block" [ngClass]="{'disabled' : f.invalid || f.pending}" [disabled]="f.invalid">Log In</button>
+                <button class="button button-block" [ngClass]="{'disabled' : f.invalid || f.pending}" [disabled]="f.invalid || f.pending">Log In</button>
                 
             </form>
 

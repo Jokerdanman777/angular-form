@@ -15,10 +15,10 @@ export class TextOnlyDirective {
 
 }
 
-export function textValidator(control: FormControl): { [key: string]: boolean } | null {
+export function textValidator(control: FormControl): { [key: string]: string } | null {
   const value: string = control.value || '';
   const valid: boolean = /^[a-zA-Z]*$/.test(value);
   return valid
     ? null
-    : { nospecial: true };
+    : { textOnly: 'Поле не может содержать цифры' };
 }
