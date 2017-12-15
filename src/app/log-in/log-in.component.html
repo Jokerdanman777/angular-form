@@ -2,7 +2,7 @@
         <div id="login">   
             <h1>Welcome Back!</h1>
   
-            <form #f="ngForm" (ngSubmit)="login(f)">
+            <form #f="ngForm" (ngSubmit)="isLogin(f)">
                 
                 <div class="field-wrap">
                     <input type="email" placeholder = "Email Address" ngModel #mail="ngModel" name="mail" required minlength="4" formAsyncEmailValidator/>

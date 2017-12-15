@@ -19,7 +19,7 @@ export const routes: Route[] = [
     {
       path: 'success',
       component: SuccessComponent,
-      // canActivate: [SuccessGuardService]
+      canActivate: [SuccessGuardService]
     },
     {
       path: '**',
